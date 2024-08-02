@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _proceedWithDownload() async {
     const url =
-        'https://github.com/Tursunali008?tab=repositories';
+        'https://github.com/Tursunali008/vazifa32';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -148,11 +148,11 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: Drawer(
         child: Column(
           children: [
-            DrawerHeader(
-              decoration: const BoxDecoration(
+            const DrawerHeader(
+              decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Container(),
+              child: Text("Menu"),
             ),
             Expanded(
               child: Container(
