@@ -40,20 +40,18 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<bool> _requestStoragePermission() async {
     if (Platform.isAndroid) {
       if (await _isAndroid11OrHigher()) {
-       
         if (!await Permission.manageExternalStorage.isGranted) {
           final status = await Permission.manageExternalStorage.request();
           return status.isGranted;
         }
       } else {
-   
         if (!await Permission.storage.isGranted) {
           final status = await Permission.storage.request();
           return status.isGranted;
         }
       }
     }
-    return true; 
+    return true;
   }
 
   Future<bool> _isAndroid11OrHigher() async {
@@ -93,8 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _proceedWithDownload() async {
-    const url =
-        'https://github.com/Tursunali008/vazifa32';
+    const url = 'https://github.com/Tursunali008/vazifa32';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -152,7 +149,18 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text("Menu"),
+              child: SizedBox(
+                height: double.infinity,
+                width: double.infinity,
+                child: Text(
+                  "Menu",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 32,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
             ),
             Expanded(
               child: Container(
